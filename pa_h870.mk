@@ -18,8 +18,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common Havoc stuff.
-$(call inherit-product, vendor/pa/config/common_full_phone.mk)
+# Include Paranoid Android common configuration
+TARGET_BOOT_ANIMATION_RES := 1440
+
+include device/qcom/common/common.mk
+include vendor/pa/config/common_full_phone.mk
 
 # Inherit from h870 device
 $(call inherit-product, device/lge/h870/device.mk)
