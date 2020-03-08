@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Include DU common configuration
+include vendor/du/config/common_full_phone.mk
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit from h870 device
 $(call inherit-product, device/lge/h870/device.mk)
@@ -31,7 +31,7 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH_OVERRIDE)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h870
-PRODUCT_NAME := lineage_h870
+PRODUCT_NAME := du_h870
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H870
 PRODUCT_MANUFACTURER := LGE
