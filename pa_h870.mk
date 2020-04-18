@@ -24,7 +24,6 @@ TARGET_BOOT_ANIMATION_RES := 1440
 # Inherit from h870 device
 $(call inherit-product, device/lge/h870/device.mk)
 
-include device/qcom/common/common.mk
 include vendor/pa/config/common_full_phone.mk
 
 # Security patch level
