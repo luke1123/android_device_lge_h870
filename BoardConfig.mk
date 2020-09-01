@@ -31,3 +31,5 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 24595398656
 
 # inherit from the proprietary version
 -include vendor/lge/h870/BoardConfigVendor.mk
+
+ALLOW_MISSING_DEPENDENCIES=true
